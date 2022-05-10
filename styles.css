@@ -175,3 +175,6 @@ background: #F1F1F1;
 .btn:last-child {
 	margin-right: 0;
 }
+.btn:hover {
+	cursor: pointer;
+}
