@@ -1,0 +1,177 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing: border-box;
+}
+.wrapper {
+	font-family: Inter sans-serif;
+   display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.form {
+	width: 1399px;
+	margin: 0 auto;
+}
+
+
+/* -----------HEADER--------------------- */
+
+
+
+.fieldset__header {
+	width: 621px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+
+.header__input {
+	background: #ffffff;
+	width: 400px;
+	border-radius: 10px;
+	padding: 17px 15px;
+	margin-left: 30px;
+	border: 1px #c3a1fe solid;
+	font-size: 16px;
+}
+
+.header__btn {
+	border-radius: 10px;
+	background: #A672FF;
+	margin-right: 15px;
+	padding: 17px 35px;
+
+	font-weight: 600;
+	font-size: 16px;
+	color: #ffffff;
+	border: none;
+}
+
+.header__btn:hover {
+	cursor: pointer;
+}
+
+/* -----------BODY--------------------- */
+
+
+.body {
+	width: 621px;
+	margin: 56px auto;
+}
+
+
+.body__item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px 0px 24px 24px;
+   width: 621px;
+	background: #F1F1F1;
+   border-radius: 10px;
+}
+
+.body__input {
+appearance: none;
+position: absolute;
+}
+.body__input:checked+label {
+	text-decoration: line-through;
+	text-decoration-color: #A672FF;
+}
+
+.body__lable {
+font-size: 20px;
+font-weight: 500;
+color: #000000;
+padding-left: 40px;
+
+}
+
+
+.body__lable:before {
+	content:"" ;
+	display: block;
+	height: 30px;
+   width: 30px;
+	background-color: #ffffff;
+
+	border-radius: 50%;
+	border: 1px solid #A672FF;
+
+	position: absolute;
+	top: 13px;
+	left: 18px;
+	z-index: 1;
+
+	transition: background-color 0.5s linear;
+}
+
+
+.body__lable:after {
+	content: "";
+	height: 25px;
+	width: 25px;
+	display: block;
+	
+	background: url(img/done.png) no-repeat;
+	background-size: 30px 30px;
+	opacity: 0;
+
+
+	position: absolute;
+   top: 13px;
+	left: 19px;
+	z-index: 2;
+
+	transition: opacity 0.5s linear;
+}
+
+.body__input:checked + .body__lable:before {
+	background-color: #A672FF;
+
+}
+.body__input:checked + .body__lable:after {
+	opacity: 1;
+}
+
+.icon__pan {
+padding-right: 20px;
+}
+
+/* -----------BUTTON--------------------- */
+
+.fildset__button {
+width: 621px;
+margin: 0 auto;
+display: flex;
+justify-content:center;
+margin-bottom: 330px;
+background: #F1F1F1;
+}
+
+.btn {
+	color: #A672FF;
+	font-size: 14px;
+	font-weight: 500;
+	border: 1px #A672FF solid;
+	border-radius: 10px;
+	width: 127px;
+	padding: 5px;
+	margin-right: 44px;	
+	transition: background-color 0.3s linear,
+	color 0.3s linear;
+}
+.btn:focus {
+	background-color: #A672FF;
+	color:#ffffff;
+}
+.btn:last-child {
+	margin-right: 0;
+}
