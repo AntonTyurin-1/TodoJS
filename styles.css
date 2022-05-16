@@ -40,6 +40,7 @@ body {
 	margin-left: 30px;
 	border: 1px #c3a1fe solid;
 	font-size: 16px;
+	outline: none;
 }
 
 .form__btn {
@@ -63,7 +64,7 @@ body {
 
 .list {
 	width: 621px;
-	margin: 56px auto;
+	margin: 70px auto;
 }
 
 
@@ -76,6 +77,10 @@ body {
    width: 621px;
 	background: #F1F1F1;
    border-radius: 10px;
+	margin-top: 20px;
+}
+.list__item:first-child {
+	margin-top: 0;
 }
 
 .list__input {
@@ -142,18 +147,17 @@ padding-left: 40px;
 }
 
 .icon__pan {
-padding-right: 20px;
+	padding-right: 20px;
 }
 
 /* -----------BUTTON--------------------- */
 
 .wrapper__btn {
-width: 621px;
-margin: 0 auto;
-display: flex;
-justify-content:center;
-margin-bottom: 330px;
-background: #F1F1F1;
+	width: 621px;
+	margin: 130px auto 340px;
+	display: flex;
+	justify-content: center;
+	background: #F1F1F1;
 }
 
 .btn {
