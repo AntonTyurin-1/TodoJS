@@ -15,33 +15,41 @@ function createListItem(task) {
 	p.innerHTML = task.text
 	
 	const img = document.createElement('img')
-	img.src = 'img/del.svg'
+	
+   img.src = 'img/del.svg'
 	img.alt = 'image'
-	let div =  document.createElement('div')
+
+	let div = document.createElement('div')
 	div.append(img)
+	div.addEventListener('click', delTask)
 
    li.append(input, p, div)
-	const ul = document.querySelector('ul')
-	ul.prepend(li)
+	
+	li.id = task.id
+	
+	/* console.log() */
 	return li 	
 } 
 
 
 function renderTasks(tasks) {
+	const ul = document.querySelector('ul')
+	ul.innerHTML = ''
 	tasks.forEach(item => {
-		createListItem(item)
-	})			
+		let li = createListItem(item)
+		ul.prepend(li)
+	})
 }
 renderTasks(arrTasks)
 
-
+/* 	-----------ADD----------------------------------------------------- */
 
 function addTasks() {
 	const formInput = document.querySelector('.form__input')
 
-	const maxId = arrTasks.length
+	const maxId = new Date()
 
-	const newTask = { id: maxId, text: formInput.value, complited: false }
+	const newTask = { id: + maxId, text: formInput.value, complited: false }
 
 	arrTasks.push(newTask)
 
@@ -54,11 +62,13 @@ formButton.addEventListener('click', addTasks)
 
 /* 	-----------DELETE----------------------------------------------------- */
 
-function delTask(id) {
+function delTask(event) {
+	let id = event.target.parentNode.parentNode.id
 	const arrDel = arrTasks.filter(elem => elem.id != id)
 	renderTasks(arrDel)
+	console.log(event.target.parentNode.parentNode.id)
 }
 
-const imgDel = document.querySelector('img')
-imgDel.addEventListener('click', delTask)
 
+
+ 
