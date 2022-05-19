@@ -4,9 +4,56 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="styles.css">
+   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
 	<title>Document</title>
+
 </head>
 <body>
+	<div class="wrapper">
+
+		<form action="#" name="MyForm" method="get" class="wrapper__form form">
+			<input type="text" class="form__input">
+			<button type="button" class="form__btn">Add</button>
+		</form>
+
+		<ul class="wrapper__list list">
+
+			<li class="list__item">
+				<input type="checkbox" class="list__input" id="shop">
+				<label class="list__label" for="shop"> Купить хлеб </label>
+				<div class="list__icon icon">
+					<a href="" class="icon__pan">
+						<img src="img/edit.svg" alt="icon">
+					</a>
+					<a href="" class="icon__del">
+						<img src="img/del.svg" alt="icon">
+					</a>
+				</div>
+			</li>
+
+			<li class="list__item">
+				<input type="checkbox" class="list__input" id="shop1">
+				<label class="list__label" for="shop1"> Купить масло </label>
+				<div class="list__icon icon">
+					<a href="" class="icon__pan">
+						<img src="img/edit.svg" alt="icon">
+					</a>
+					<a href="" class="icon__del">
+						<img src="img/del.svg" alt="icon">
+					</a>
+				</div>
+			</li>
 	
+		</ul>
+
+		<div class="wrapper__btn">
+			<button class="btn" type="button">All</button>
+			<button class="btn" type="button">Completed</button>
+			<button class="btn" type="button">Not Completed</button>
+		</div>
+
+	</div>
+<script src="script.js"></script>
 </body>
 </html>
