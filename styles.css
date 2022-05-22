@@ -69,11 +69,11 @@ body {
 
 
 .list__item {
-	/* position: relative; */
+	position: relative;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 15px 0px 24px 24px;
+	padding: 15px 24px 24px 24px;
    width: 621px;
 	background: #F1F1F1;
    border-radius: 10px;
@@ -91,18 +91,25 @@ body {
 	border-radius: 50%;	
 }
 
-
+.list__text-textDecoration {
+  text-decoration: line-through;
+  text-decoration-color: #A672FF;
+  font-size: 20px;
+  font-weight: 500;
+  color: #000000;
+  padding-left: 40px;
+}
 
 .list__text {
-font-size: 20px;
-font-weight: 500;
-color: #000000;
-padding-left: 40px;
+	font-size: 20px;
+	font-weight: 500;
+	color: #000000;
+	padding-left: 40px;
 }
 
 
 
-/* .list__label:before {
+.list__text:before {
 	content:"" ;
 	display: block;
 	height: 30px;
@@ -121,7 +128,7 @@ padding-left: 40px;
 }
 
 
-.list__label:after {
+.list__text:after {
 	content: "";
 	height: 25px;
 	width: 25px;
@@ -140,13 +147,13 @@ padding-left: 40px;
 	transition: opacity 0.5s linear;
 }
 
-.list__input:checked + .list__label:before {
+.list__input:checked + .list__text:before {
 	background-color: #A672FF;
 }
 
-.list__input:checked + .list__label:after {
+.list__input:checked + .list__text:after {
 	opacity: 1;
-} */
+}
 
 .icon__pan {
 	padding-right: 20px;
@@ -155,6 +162,8 @@ padding-left: 40px;
 img:hover {
 	cursor: pointer;
 }
+
+
 
 /* -----------BUTTON--------------------- */
 
@@ -166,7 +175,9 @@ img:hover {
 	background: #F1F1F1;
 }
 
-.btn {
+.btn1,
+.btn2,
+.btn3 {
 	color: #A672FF;
 	font-size: 14px;
 	font-weight: 500;
@@ -179,15 +190,19 @@ img:hover {
 	color 0.3s linear;
 }
 
+
 .btn:focus {
 	background-color: #A672FF;
 	color:#ffffff;
 }
 
+
 .btn:last-child {
 	margin-right: 0;
 }
 
+
 .btn:hover {
 	cursor: pointer;
 }
+

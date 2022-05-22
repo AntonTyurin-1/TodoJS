@@ -14,14 +14,16 @@
 
 		<form class="wrapper__form form">
 			<input type="text" class="form__input">
+			
 			<button type="button" class="form__btn">Add</button>
 		</form>
 
 		<ul class="wrapper__list list">
 
 			<li class="list__item">
-				<input type="checkbox" class="list__input">
-				<p class="list__text"> Купить масло</p>
+				<input type="checkbox" class="list__input" id="1">
+				<label class="list__text" for="1"> Купить масло</label>
+				<!-- <p class="list__text"> Купить масло</p> -->
 
 				<!-- <img src="img/edit.svg" alt="icon" class="icon__pan"> -->
 				<img src=" img/del.svg" alt="icon">
@@ -29,20 +31,21 @@
 			</li>
 
 			<li class="list__item">
-				<input type="checkbox" class="list__input">
-				<p class="list__text"> Купить хлеб</p>
+				<input type="checkbox" class="list__input" id="2">
+				<label class="list__text" for="2"> Купить хлеб</label>
 
 				<!-- <img src="img/edit.svg" alt="icon" class="icon__pan"> -->
-				<img src=" img/del.svg" alt="icon">
+				<img src=" img/del.svg" alt="icon" class="icon__del" >
+				
 
 			</li>
 
 		</ul>
 
 		<div class="wrapper__btn">
-			<button class="btn" type="button">All</button>
-			<button class="btn" type="button">Completed</button>
-			<button class="btn" type="button">Not Completed</button>
+			<button class="btn btn1" type="button">All</button>
+			<button class="btn btn2" type="button">Completed</button>
+			<button class="btn btn3" type="button">Not Completed</button>
 		</div>
 
 	</div>
