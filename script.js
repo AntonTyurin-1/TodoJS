@@ -103,9 +103,13 @@ function delTask(event) {
 
 /* 	-----------ALL----------------------------------------------------- */
 
+function allTask() {
+	let all = arrTasks
+	renderTasks(all)
+}
 
-/* let btn1 = document.querySelector('.btn1')
-		btn1.addEventListener('click', c) */
+ let btn1 = document.querySelector('.btn1')
+btn1.onclick = allTask 
 
 
 /* 	-----------checkedTaskL----------------------------------------------------- */
@@ -114,8 +118,7 @@ function delTask(event) {
 function checkedTask(item) {
 	let check = arrTasks.filter(item => item.complited == true)
 
-	arrTasks = check
-	renderTasks(arrTasks)
+	 renderTasks(check)
 
 }
 let btn2 = document.querySelector('.btn2')
@@ -127,8 +130,7 @@ btn2.onclick = checkedTask
 function NotCheckedTask(item) {
 	let notCheck = arrTasks.filter(item => item.complited !== true)
 
-	arrTasks = notCheck
-	renderTasks(arrTasks)
+	renderTasks(notCheck)
 }
 let btn3 = document.querySelector('.btn3')
 btn3.onclick = NotCheckedTask
