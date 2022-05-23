@@ -1,4 +1,5 @@
-let arrTasks = [		
+let arrTasks = [	
+	
 ]
 /* 	-----------CREATE---------------------------------------------------------- */
 
@@ -7,18 +8,22 @@ function createListItem(task) {
 	li.classList.add('list__item')
 
    let input = document.createElement('input')
+
 	input.type = 'checkbox'
 	input.checked = task.complited
+	input.addEventListener('click', checkBox)
 	input.classList.add('list__input')
-	input.id = + new Date()
+	input.id = task.id
+	
 
    let lable = document.createElement('lable') 
-	lable.classList.add('list__text')
+	lable.classList.add(`${task.complited}` ?
+	'.list__lable-textDecoration' : '.list__lable');
 	lable.innerHTML = task.text
 	lable.for = input.id
+	
+	
 	/*  console.log(input.id) */
-	
-	
 	let img = document.createElement('img')
 	img.src = 'img/del.svg'
 	img.alt = 'image'
@@ -53,7 +58,7 @@ function addTasks() {
 
 	const maxId = + new Date()
 
-	const newTask = { id: maxId, text: formInput.value, complited: false }
+	const newTask = { id: maxId, text: formInput.value, complited: false}
 
 	arrTasks.push(newTask)
 
@@ -63,6 +68,24 @@ function addTasks() {
 
 const formButton = document.querySelector('.form__btn')
 formButton.addEventListener('click', addTasks)
+formButton.addEventListener('keyup', function(event) {
+	/* console.log(event.code) */
+})
+
+/* 	-----------CHECKBOX----------------------------------------------------- */
+
+function checkBox(event) {
+	let check = event.target.parentNode.id
+	let newArr = arrTasks.map(elem => function() {
+		if (li.id = check) {
+		 elem.complited = true
+		}
+	})
+
+	newArr = arrTasks
+	renderTasks(arrTasks)
+	console.log(arrTasks)
+}
 
 /* 	-----------DELETE----------------------------------------------------- */
 
@@ -76,12 +99,15 @@ function delTask(event) {
 
 /* 	-----------ALL----------------------------------------------------- */
 
-function allTask() {
-let all = arrTasks.filter(item => item.complited = true)
+function checkedTask() {
+let all = arrTasks.filter(item => item.complited == true)
 
 arrTasks = all
 renderTasks(arrTasks)
-console.log(arrTasks)
+}
 
-}const btn2 = document.querySelector('.btn2')
- btn2.addEventListener('click', allTask)
+let btn1 = document.querySelector('.btn1')
+ btn1.addEventListener('click', checkedTask)
+
+/* ------------------------- */
+
