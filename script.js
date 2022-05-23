@@ -1,6 +1,5 @@
-let arrTasks = [	
-	
-]
+let arrTasks = []	
+
 /* 	-----------CREATE---------------------------------------------------------- */
 
 function createListItem(task) {
@@ -8,17 +7,16 @@ function createListItem(task) {
 	li.classList.add('list__item')
 
    let input = document.createElement('input')
-
+   
 	input.type = 'checkbox'
 	input.checked = task.complited
-	input.addEventListener('click', checkBox)
 	input.classList.add('list__input')
 	input.id = task.id
 	
 
    let lable = document.createElement('lable') 
-	lable.classList.add(`${task.complited}` ?
-	'.list__lable-textDecoration' : '.list__lable');
+	lable.classList.add(`${task.complited ? 
+	'.list__lable-textDecoration' : '.list__lable'}`)
 	lable.innerHTML = task.text
 	lable.for = input.id
 	
@@ -36,10 +34,11 @@ function createListItem(task) {
 	
 	li.id = task.id
 	
-	/*  console.log()  */
+	 console.log(task.text) 
 	return li 	
 } 
 
+/* 	-----------RENDER----------------------------------------------------- */
 
 function renderTasks(tasks) {
 	const ul = document.querySelector('ul')
@@ -63,28 +62,33 @@ function addTasks() {
 	arrTasks.push(newTask)
 
 	renderTasks(arrTasks)
-	/* console.log(arrTasks) */
+
+	localStorage.setItem(formInput.value, JSON.stringify(newTask))
+   let newT = localStorage.getItem(formInput.value)
+   let localS = JSON.parse(newT)
+	
+	
 }
 
 const formButton = document.querySelector('.form__btn')
 formButton.addEventListener('click', addTasks)
 formButton.addEventListener('keyup', function(event) {
-	/* console.log(event.code) */
+
+	console.log(event.code) 
 })
+/* 	-----------CHECKED----------------------------------------------------- */
 
-/* 	-----------CHECKBOX----------------------------------------------------- */
-
-function checkBox(event) {
-	let check = event.target.parentNode.id
-	let newArr = arrTasks.map(elem => function() {
-		if (li.id = check) {
-		 elem.complited = true
+function checkInput(event) {
+	let id = event.target.parentNode.id
+	let newArr = arrTasks.map(elem => {
+		if (elem.id = id) {
+		return elem.complited = true
 		}
 	})
 
-	newArr = arrTasks
+	arrTasks = newArr
 	renderTasks(arrTasks)
-	console.log(arrTasks)
+
 }
 
 /* 	-----------DELETE----------------------------------------------------- */
@@ -94,20 +98,34 @@ function delTask(event) {
 	let arrDel = arrTasks.filter(elem => elem.id != id)
 	arrTasks = arrDel
 	renderTasks(arrTasks)
-	/* console.log(arrDel) */
 }
 
 /* 	-----------ALL----------------------------------------------------- */
 
-function checkedTask() {
-let all = arrTasks.filter(item => item.complited == true)
-
-arrTasks = all
-renderTasks(arrTasks)
+/* function checkedTask(item) {
+	let all = arrTasks.filter(item => function () {
+		if (item.complited == true) {
+			let btn2 = document.querySelector('.btn2')
+			btn2.addEventListener('click', checkedTask)
+		}
+		else if (item.complited !== true) {
+			let btn3 = document.querySelector('.btn3')
+			btn3.addEventListener('click', checkedTask)
+		}
+		let btn1 = document.querySelector('.btn1')
+		btn1.addEventListener('click', checkedTask)
+	})
+	 arrTasks = all 
+	renderTasks(arrTasks)
+	console.log(arrTasks)
 }
+		 */
 
-let btn1 = document.querySelector('.btn1')
- btn1.addEventListener('click', checkedTask)
+
+
 
 /* ------------------------- */
 
+localStorage.setItem('task', JSON.stringify(arrTasks))
+let newT = localStorage.getItem('task')
+let localS = JSON.parse(newT)
