@@ -92,7 +92,7 @@ body {
 	border-radius: 50%;	
 }
 
-.list__lable-textDecoration {
+.list__label-textDecoration {
   text-decoration: line-through;
   text-decoration-color: #A672FF;
   font-size: 20px;
@@ -101,14 +101,14 @@ body {
   padding-left: 40px;
 }
 
-.list__lable {
+.list__label {
 	font-size: 20px;
 	font-weight: 500;
 	color: #000000;
 	padding-left: 40px;
 }
 
-.list__lable:before {
+/*  .list__label:before {
 	content:"" ;
 	display: block;
 	height: 30px;
@@ -127,7 +127,7 @@ body {
 }
 
 
-.list__lable:after {
+.list__label:after {
 	content: "";
 	height: 25px;
 	width: 25px;
@@ -145,13 +145,13 @@ body {
 	transition: opacity 0.5s linear;
 }
 
-.list__input:checked + .list__lable:before {
+.list__input:checked + .list__label:before {
 	background-color: #A672FF;
 }
 
-.list__input:checked + .list__lable:after {
+.list__input:checked + .list__label:after {
 	opacity: 1;
-}
+}  */
 
 .icon__pan {
 	padding-right: 20px;
