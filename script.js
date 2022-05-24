@@ -8,21 +8,21 @@ function createListItem(task) {
 	li.classList.add('list__item')
 
    let input = document.createElement('input')
-   
+
 	input.type = 'checkbox'
 	input.checked = task.complited
 	input.classList.add('list__input')
 	input.id = task.id
-	input.onclick = checkInput
+	/* input.onclick = checkInput */
 
    let label = document.createElement('label') 
-	label.classList.add(`${task.complited ? 
-	'list__label-textDecoration' : 'list__label'}`)
+	label.classList.add('list__label')
+
 	label.innerHTML = task.text
-	label.for = input.id
+	label.for = task.id
+	label.onclick = checkInput
 	
 	
-	/*  console.log(input.id) */
 	let img = document.createElement('img')
 	img.src = 'img/del.svg'
 	img.alt = 'image'
@@ -64,22 +64,28 @@ function addTasks() {
 
 	renderTasks(arrTasks)
 
-	localStorage.setItem(formInput.value, JSON.stringify(arrTasks))
+/* 	localStorage.setItem(formInput.value, JSON.stringify(arrTasks))
 	function delStorege() {
 		if (delTask(item)) {
 			localStorage.removeItem(formInput.value)
 		}
 		let newT = localStorage.getItem(arrTasks)
 		let localS = JSON.parse(newT)
-	}
+	} */
 
 }
+
 const formButton = document.querySelector('.form__btn')
 formButton.addEventListener('click', addTasks)
-formButton.addEventListener('keyup', function(event) {
 
-	console.log(event.code) 
+const formInput = document.querySelector('.form__input')
+formInput.addEventListener('keydown', function(event) {
+   if(event.code === 'Enter') {
+		addTasks()
+	} 
 })
+
+
 /* 	-----------CHECKED----------------------------------------------------- */
 
 function checkInput(event) {

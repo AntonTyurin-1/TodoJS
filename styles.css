@@ -84,7 +84,7 @@ body {
 }
 
 .list__input {
-	/* appearance: none; */
+	appearance: none;
 	position: absolute;
 	display: block;
 	width: 20px;
@@ -92,13 +92,13 @@ body {
 	border-radius: 50%;	
 }
 
-.list__label-textDecoration {
+.list__input:checked + label {
   text-decoration: line-through;
   text-decoration-color: #A672FF;
-  font-size: 20px;
+ /*  font-size: 20px;
   font-weight: 500;
   color: #000000;
-  padding-left: 40px;
+  padding-left: 40px; */
 }
 
 .list__label {
@@ -108,7 +108,7 @@ body {
 	padding-left: 40px;
 }
 
-/*  .list__label:before {
+ .list__label:before {
 	content:"" ;
 	display: block;
 	height: 30px;
@@ -151,7 +151,7 @@ body {
 
 .list__input:checked + .list__label:after {
 	opacity: 1;
-}  */
+} 
 
 .icon__pan {
 	padding-right: 20px;
