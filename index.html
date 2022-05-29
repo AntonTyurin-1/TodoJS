@@ -12,10 +12,10 @@
 <body>
 	<div class="wrapper">
 
-		<form class="wrapper__form form">
+		<form onsubmit="addTasks()" class="wrapper__form form" >
 			<input type="text" class="form__input">
 			
-			<button type="button" class="form__btn">Add</button>
+			<button onClick = 'addTasks()' type="button" class="form__btn">Add</button>
 		</form>
 
 		<ul class="wrapper__list list">
@@ -44,9 +44,9 @@
 		</ul>
 
 		<div class="wrapper__btn">
-			<button class="btn btn1" type="button">All</button>
-			<button class="btn btn2" type="button">Completed</button>
-			<button class="btn btn3" type="button">Not Completed</button>
+			<button onClick = 'allTask()' class="btn btn1" type="button">All</button>
+			<button onClick = 'checkedTask()' class="btn btn2" type="button">Completed</button>
+			<button onClick = 'NotCheckedTask()' class="btn btn3" type="button">Not Completed</button>
 		</div>
 
 	</div>
